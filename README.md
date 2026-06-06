@@ -1,21 +1,50 @@
 # Esercitazione-01
 
-This is a training project created with Unity.
+Progetto Unity XR per Meta Quest. Lo uso per insegnare sviluppo immersivo — è pubblico perché credo che condividere il lavoro, compresi gli errori, sia il modo migliore per imparare.
 
-## Technical Details
-- **Unity Version:** 6000.3.15f1
-- **Render Pipeline:** Universal Render Pipeline (URP)
-- **Version Control:** Git LFS enabled for binary assets (models, textures, audio).
+Se sei uno studente del corso o sei arrivato qui per conto tuo, il materiale è tutto leggibile e modificabile.
 
-## Main Packages Used
-- **Meta XR SDK (All):** 201.0.0
-- **Unity Input System:** 1.19.0
-- **Universal RP:** 17.3.0
-- **AI Navigation:** 2.0.12
-- **OpenXR Plugin:** 1.16.1
+---
 
-## Project Structure
-The project follows the `_Project` folder logic, where all developer-created assets are organized under `Assets/_Project`. 
-- **Scenes:** Contains the main scene `Main` and its related data.
-- **Models:** 3D assets are stored here, with each asset having its own dedicated subfolder at the first level.
-- **Settings:** URP and other project configuration files.
+## Cosa trovi qui
+
+Un minigioco XR completo e funzionante, costruito interamente a prefab e con una scena pronta all'uso. È pensato per essere letto, capito e modificato — non costruito da zero.
+
+Guardando il progetto puoi esplorare:
+
+- Architettura a prefab in un contesto XR reale
+- ShaderGraph: toon shader, outline, materiali non fotorealistici
+- Interazione XR con Meta SDK — grab, trigger, fisica
+- Particle System e VFX collegati a eventi di gioco
+- Convenzioni di scena e struttura di progetto Unity
+
+---
+
+## Stack
+
+| | |
+|---|---|
+| Unity | 6000.3.15f1 |
+| Render Pipeline | URP 17.3.0 |
+| XR | Meta XR SDK 201.0.0 · OpenXR 1.16.1 |
+| Input | Unity Input System 1.19.0 |
+| Navigation | AI Navigation 2.0.12 |
+| Version Control | Git + Git LFS |
+| Target | Meta Quest |
+
+---
+
+## Come iniziare
+
+Leggi [ONBOARDING.md](ONBOARDING.md) e consulta le [RULES.md](RULES.md).
+
+---
+
+## Licenza
+
+GPL-3.0 — libero di usare, modificare e distribuire con le stesse condizioni.
+
+---
+
+*Saverio Trapasso*
+*Assisted by: Claude (Anthropic)*
