@@ -1,0 +1,228 @@
+Command finished with exit code 0.
+Command output:
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+da----        06/06/2026     17:07                Models                                                               
+da----        02/06/2026     18:49                Resources                                                            
+da----        06/06/2026     17:07                Scenes                                                               
+da----        03/06/2026     12:02                Scripts                                                              
+da----        02/06/2026     20:33                Settings                                                             
+da----        02/06/2026     20:18                Sky                                                                  
+-a----        30/01/2025     14:19          41005 InputSystem_Actions.inputactions                                     
+-a----        30/01/2025     14:19            376 InputSystem_Actions.inputactions.meta                                
+-a----        02/06/2026     19:16            172 Models.meta                                                          
+-a----        02/06/2026     18:30            172 Resources.meta                                                       
+-a----        02/06/2026     19:13            172 Scenes.meta                                                          
+-a----        02/06/2026     19:13            172 Scripts.meta                                                         
+-a----        02/06/2026     19:13            172 Settings.meta                                                        
+-a----        02/06/2026     20:06            172 Sky.meta                                                             
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Models
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+da----        06/06/2026     16:49                Albero                                                               
+da----        06/06/2026     16:49                Duck                                                                 
+da----        06/06/2026     16:48                Pistola                                                              
+da----        06/06/2026     17:07                Suolo                                                                
+-a----        06/06/2026     16:43            172 Albero.meta                                                          
+-a----        06/06/2026     16:44            172 Duck.meta                                                            
+-a----        06/06/2026     16:39            172 Pistola.meta                                                         
+-a----        06/06/2026     16:53            172 Suolo.meta                                                           
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Models\Albero
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        06/06/2026     16:46           4106 M_Tree.mat                                                           
+-a----        06/06/2026     16:43            188 M_Tree.mat.meta                                                      
+-a----        06/06/2026     16:39         230112 SM_Tree.fbx                                                          
+-a----        06/06/2026     16:55           3043 SM_Tree.fbx.meta                                                     
+-a----        06/06/2026     16:49           3002 SM_Tree.prefab                                                       
+-a----        06/06/2026     16:49            154 SM_Tree.prefab.meta                                                  
+-a----        06/06/2026     16:39        3932793 T_Tree_AlbedoTransparency.png                                        
+-a----        06/06/2026     16:43           3009 T_Tree_AlbedoTransparency.png.meta                                   
+-a----        06/06/2026     16:39          19869 T_Tree_Normal.png                                                    
+-a----        06/06/2026     16:43           3009 T_Tree_Normal.png.meta                                               
+-a----        06/06/2026     16:39          21251 T_Tree_SpecularSmoothness.png                                        
+-a----        06/06/2026     16:43           3009 T_Tree_SpecularSmoothness.png.meta                                   
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Models\Duck
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        06/06/2026     16:49           4105 M_Duck.mat                                                           
+-a----        06/06/2026     16:46            188 M_Duck.mat.meta                                                      
+-a----        06/06/2026     16:39         359616 SKM_Duck.fbx                                                         
+-a----        06/06/2026     16:47           3050 SKM_Duck.fbx.meta                                                    
+-a----        06/06/2026     16:47           4540 SKM_Duck.prefab                                                      
+-a----        06/06/2026     16:47            154 SKM_Duck.prefab.meta                                                 
+-a----        06/06/2026     16:39        3781585 T_Duck_AlbedoTransparency.png                                        
+-a----        06/06/2026     16:45           3009 T_Duck_AlbedoTransparency.png.meta                                   
+-a----        06/06/2026     16:39          18089 T_Duck_Normal.png                                                    
+-a----        06/06/2026     16:45           3009 T_Duck_Normal.png.meta                                               
+-a----        06/06/2026     16:39          21251 T_Duck_SpecularSmoothness.png                                        
+-a----        06/06/2026     16:45           3009 T_Duck_SpecularSmoothness.png.meta                                   
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Models\Pistola
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        06/06/2026     16:43           4204 M_Pistola.mat                                                        
+-a----        06/06/2026     16:40            188 M_Pistola.mat.meta                                                   
+-a----        06/06/2026     16:39         337536 SM_Pistol.fbx                                                        
+-a----        06/06/2026     16:48           3053 SM_Pistol.fbx.meta                                                   
+-a----        06/06/2026     16:48           2990 SM_Pistol.prefab                                                     
+-a----        06/06/2026     16:48            154 SM_Pistol.prefab.meta                                                
+-a----        06/06/2026     16:39        4902700 T_Pistola_AlbedoTransparency.png                                     
+-a----        06/06/2026     16:39           3009 T_Pistola_AlbedoTransparency.png.meta                                
+-a----        06/06/2026     16:39        2411012 T_Pistola_SpecularSmoothness.png                                     
+-a----        06/06/2026     16:40           3009 T_Pistola_SpecularSmoothness.png.meta                                
+-a----        06/06/2026     16:39        1766055 T__Pistola_Normal.png                                                
+-a----        06/06/2026     16:40           3009 T__Pistola_Normal.png.meta                                           
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Models\Suolo
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        06/06/2026     17:07           3867 M_Suolo.mat                                                          
+-a----        06/06/2026     16:54            188 M_Suolo.mat.meta                                                     
+-a----        06/06/2026     17:07         125688 SM_Suolo.prefab                                                      
+-a----        06/06/2026     17:06            154 SM_Suolo.prefab.meta                                                 
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Resources
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        02/06/2026     18:33             29 BillingMode.json                                                     
+-a----        02/06/2026     18:33            158 BillingMode.json.meta                                                
+-a----        02/06/2026     18:42           1256 ImmersiveDebuggerSettings.asset                                      
+-a----        02/06/2026     18:42            189 ImmersiveDebuggerSettings.asset.meta                                 
+-a----        02/06/2026     18:42            499 InputActions.asset                                                   
+-a----        02/06/2026     18:42            189 InputActions.asset.meta                                              
+-a----        02/06/2026     18:49            508 MetaXRAcousticMaterialMapping.asset                                  
+-a----        02/06/2026     18:49            189 MetaXRAcousticMaterialMapping.asset.meta                             
+-a----        02/06/2026     18:49            752 OculusRuntimeSettings.asset                                          
+-a----        02/06/2026     18:42            189 OculusRuntimeSettings.asset.meta                                     
+-a----        02/06/2026     18:42            646 OVRPlatformToolSettings.asset                                        
+-a----        02/06/2026     18:42            189 OVRPlatformToolSettings.asset.meta                                   
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Scenes
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+da----        03/06/2026     11:27                Main                                                                 
+-a----        02/06/2026     20:12            172 Main.meta                                                            
+-a----        06/06/2026     17:07          65028 Main.unity                                                           
+-a----        02/06/2026     19:02            155 Main.unity.meta                                                      
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Scenes\Main
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        03/06/2026     11:27          51477 LightingData.asset                                                   
+-a----        03/06/2026     11:27            190 LightingData.asset.meta                                              
+-a----        03/06/2026     11:26         639327 Lightmap-0_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-0_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        6115632 Lightmap-0_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-0_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26         620935 Lightmap-1_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-1_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        5998874 Lightmap-1_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-1_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26         626436 Lightmap-2_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-2_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        5962615 Lightmap-2_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-2_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26         633873 Lightmap-3_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-3_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        6044410 Lightmap-3_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-3_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26          48516 Lightmap-4_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-4_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        1044231 Lightmap-4_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-4_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26          48112 Lightmap-5_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-5_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        1041464 Lightmap-5_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-5_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26          48287 Lightmap-6_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-6_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        1046747 Lightmap-6_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-6_comp_light.exr.meta                                       
+-a----        03/06/2026     11:26          48648 Lightmap-7_comp_dir.png                                              
+-a----        03/06/2026     11:26           3010 Lightmap-7_comp_dir.png.meta                                         
+-a----        03/06/2026     11:26        1048753 Lightmap-7_comp_light.exr                                            
+-a----        03/06/2026     11:26           3009 Lightmap-7_comp_light.exr.meta                                       
+-a----        02/06/2026     20:31           8528 NavMesh-NavMesh Surface.asset                                        
+-a----        02/06/2026     20:31            189 NavMesh-NavMesh Surface.asset.meta                                   
+-a----        03/06/2026     11:26         133259 ReflectionProbe-0.exr                                                
+-a----        03/06/2026     11:27           3010 ReflectionProbe-0.exr.meta                                           
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Scripts
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        03/06/2026     12:02           2349 SCR_Controller_Aereo.cs                                              
+-a----        03/06/2026     11:55             59 SCR_Controller_Aereo.cs.meta                                         
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Settings
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        02/06/2026     20:33          24035 DefaultVolumeProfile.asset                                           
+-a----        30/01/2025     14:19            189 DefaultVolumeProfile.asset.meta                                      
+-a----        30/01/2025     14:19           1713 Mobile_Renderer.asset                                                
+-a----        30/01/2025     14:19            189 Mobile_Renderer.asset.meta                                           
+-a----        02/06/2026     20:33           4650 Mobile_RPAsset.asset                                                 
+-a----        30/01/2025     14:19            189 Mobile_RPAsset.asset.meta                                            
+-a----        30/01/2025     14:19           3439 PC_Renderer.asset                                                    
+-a----        30/01/2025     14:19            189 PC_Renderer.asset.meta                                               
+-a----        02/06/2026     18:49           4669 PC_RPAsset.asset                                                     
+-a----        30/01/2025     14:19            189 PC_RPAsset.asset.meta                                                
+-a----        30/01/2025     14:19           3703 SampleSceneProfile.asset                                             
+-a----        30/01/2025     14:19            182 SampleSceneProfile.asset.meta                                        
+-a----        02/06/2026     20:33          26038 UniversalRenderPipelineGlobalSettings.asset                          
+-a----        30/01/2025     14:19            189 UniversalRenderPipelineGlobalSettings.asset.meta                     
+
+
+    Directory: D:\Repo\Git\esercitazione-01\Assets\_Project\Sky
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        02/06/2026     20:18           4017 M_Sky.mat                                                            
+-a----        02/06/2026     20:09            188 M_Sky.mat.meta                                                       
+-a----        02/06/2026     20:09       81301576 T_fouriesburg_mountain_midday_4k.exr                                 
+-a----        02/06/2026     20:10           3009 T_fouriesburg_mountain_midday_4k.exr.meta                            
+-a----        02/06/2026     20:09       24168296 T_minedump_flats_2k.exr                                              
+-a----        02/06/2026     20:10           3009 T_minedump_flats_2k.exr.meta                                         
+-a----        02/06/2026     20:08       96362265 T_qwantani_dusk_2_4k.exr                                             
+-a----        02/06/2026     20:10           3009 T_qwantani_dusk_2_4k.exr.meta                                        
+-a----        02/06/2026     20:09       24226182 T_qwantani_noon_2k.exr                                               
+-a----        02/06/2026     20:10           3009 T_qwantani_noon_2k.exr.meta
