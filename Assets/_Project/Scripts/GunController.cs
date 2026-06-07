@@ -45,6 +45,8 @@ namespace Project.Gameplay
         private void HandleHand(OVRInput.Controller controller, Transform anchor, MeshRenderer gunMesh, Transform muzzle)
         {
             // Grab held down -> gun visible and tracking the hand anchor.
+            // Use ONLY the specific controller for this hand so the left grab
+            // shows only the left gun and the right grab only the right gun.
             bool isGrabbing = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, controller);
 
             if (gunMesh != null)
@@ -82,6 +84,9 @@ namespace Project.Gameplay
 
             if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
             {
+                // Temporary debug log to confirm what the raycast hits in Play Mode.
+                Debug.Log($"Raycast hit: {hit.collider.gameObject.name} tag: {hit.collider.tag}");
+
                 // Hit a Duck -> add score.
                 if (hit.collider.CompareTag("Duck"))
                 {
@@ -91,9 +96,13 @@ namespace Project.Gameplay
                     }
                 }
                 // Hit a UI Button -> invoke its click.
-                else if (hit.collider.TryGetComponent<Button>(out var button))
+                else
                 {
-                    button.onClick.Invoke();
+                    var button = hit.collider.GetComponentInParent<Button>();
+                    if (button != null)
+                    {
+                        button.onClick.Invoke();
+                    }
                 }
 
                 // Spawn the impact VFX on any hit (Duck or any other surface)

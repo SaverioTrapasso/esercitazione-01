@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 26811713}
   - component: {fileID: 26811715}
   - component: {fileID: 26811714}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Header Score Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 841248115}
   - component: {fileID: 841248117}
   - component: {fileID: 841248116}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Content Timer Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 922285270}
   - component: {fileID: 922285272}
   - component: {fileID: 922285271}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1620,7 @@ GameObject:
   - component: {fileID: 971857033}
   - component: {fileID: 971857035}
   - component: {fileID: 971857034}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1788,7 +1788,7 @@ GameObject:
   - component: {fileID: 1052955069}
   - component: {fileID: 1052955071}
   - component: {fileID: 1052955070}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Header Timer Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2382,7 +2382,7 @@ GameObject:
   - component: {fileID: 1202694494}
   - component: {fileID: 1202694496}
   - component: {fileID: 1202694495}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2520,7 +2520,7 @@ GameObject:
   - component: {fileID: 1225911335}
   - component: {fileID: 1225911334}
   - component: {fileID: 1225911333}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3346,7 +3346,7 @@ GameObject:
   - component: {fileID: 1798202630}
   - component: {fileID: 1798202632}
   - component: {fileID: 1798202631}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Content Score Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3487,7 +3487,7 @@ GameObject:
   - component: {fileID: 1862482503}
   - component: {fileID: 1862482505}
   - component: {fileID: 1862482504}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
