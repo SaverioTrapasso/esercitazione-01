@@ -20,15 +20,19 @@ namespace Project.Gameplay
 
         private void Update()
         {
-            // Visibility: enable mesh only if controller is connected
+            // Check if controller is connected
             bool isControllerConnected = OVRInput.IsControllerConnected(controllerType);
-            if (gunMesh != null && gunMesh.enabled != isControllerConnected)
+            
+            // Visibility: enable mesh only if Grab (HandTrigger) is held
+            bool isGrabbing = isControllerConnected && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, controllerType);
+            
+            if (gunMesh != null && gunMesh.enabled != isGrabbing)
             {
-                gunMesh.enabled = isControllerConnected;
+                gunMesh.enabled = isGrabbing;
             }
 
-            // Input: check for trigger press
-            if (isControllerConnected && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controllerType))
+            // Input: check for trigger press only if grabbing
+            if (isGrabbing && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controllerType))
             {
                 Fire();
             }
