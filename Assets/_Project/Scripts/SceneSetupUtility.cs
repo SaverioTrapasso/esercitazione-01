@@ -3,12 +3,17 @@ using Project.Core;
 using Project.Gameplay;
 using Project.UI;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.UI;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Project.Editor
 {
     /// <summary>
-    /// Utility script to set up the scene hierarchy and components from code,
-    /// since we don't have access to the Unity Editor GUI.
+    /// Utility script to set up the scene hierarchy and components from code.
     /// Assisted by: Junie (JetBrains)
     /// </summary>
     public class SceneSetupUtility : MonoBehaviour
@@ -16,6 +21,12 @@ namespace Project.Editor
         [Header("Prefabs")]
         public GameObject duckPrefab;
         public GameObject gunPrefab;
+
+        [Header("UI References (Optional if setting up manually)")]
+        public Canvas canvas;
+        public TMP_Text scoreText;
+        public TMP_Text timerText;
+        public Button startButton;
 
         [ContextMenu("Setup Scene")]
         public void SetupScene()
@@ -44,7 +55,12 @@ namespace Project.Editor
                 GameObject spawnerObj = new GameObject("DuckSpawner");
                 spawner = spawnerObj.AddComponent<DuckSpawner>();
                 spawnerObj.transform.SetParent(gameLogicFolder);
-                // Note: duckPrefab and spawnPoints need to be assigned in inspector
+            }
+            
+            if (duckPrefab != null) {
+                // Assign via reflection or serialized field if possible
+                var prop = spawner.GetType().GetField("duckPrefab", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (prop != null) prop.SetValue(spawner, duckPrefab);
             }
 
             // 4. Setup UIManager
@@ -54,10 +70,33 @@ namespace Project.Editor
                 GameObject uiObj = new GameObject("UIManager");
                 ui = uiObj.AddComponent<UIManager>();
                 uiObj.transform.SetParent(interactiveFolder);
-                // Note: UI elements need to be assigned in inspector
             }
 
-            Debug.Log("Scene setup initiated. Please assign serializable references in the Inspector.");
+            // 5. Setup Gun on Hands
+            SetupGunOnHands(interactiveFolder);
+
+            Debug.Log("Scene setup completed. Please verify references in the Inspector.");
+        }
+
+        private void SetupGunOnHands(Transform parent)
+        {
+            // Find Camera Rig anchors (simple search)
+            GameObject leftHand = GameObject.Find("LeftHandAnchor");
+            GameObject rightHand = GameObject.Find("RightHandAnchor");
+
+            if (leftHand != null && gunPrefab != null) {
+                if (leftHand.GetComponentInChildren<Gun>() == null) {
+                    GameObject gun = Instantiate(gunPrefab, leftHand.transform);
+                    gun.name = "Gun_Left";
+                }
+            }
+
+            if (rightHand != null && gunPrefab != null) {
+                if (rightHand.GetComponentInChildren<Gun>() == null) {
+                    GameObject gun = Instantiate(gunPrefab, rightHand.transform);
+                    gun.name = "Gun_Right";
+                }
+            }
         }
 
         private Transform GetOrCreateFolder(string name)

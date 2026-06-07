@@ -5,15 +5,21 @@ using Project.Core;
 namespace Project.UI
 {
     /// <summary>
-    /// Manages the game UI: score, timer, and state transitions.
+    /// Manages the game UI: score, timer, and state transitions based on game state.
     /// Assisted by: Junie (JetBrains)
     /// </summary>
     public class UIManager : MonoBehaviour
     {
-        [Header("UI Elements")]
+        [Header("UI Panels")]
+        [SerializeField] private GameObject headerScorePanel;
+        [SerializeField] private GameObject contentScorePanel;
+        [SerializeField] private GameObject headerTimerPanel;
+        [SerializeField] private GameObject contentTimerPanel;
+        [SerializeField] private GameObject startButton;
+
+        [Header("Texts")]
         [SerializeField] private TMP_Text scoreText;
         [SerializeField] private TMP_Text timerText;
-        [SerializeField] private GameObject startButton;
 
         private void Start()
         {
@@ -41,31 +47,53 @@ namespace Project.UI
 
         private void HandleGameStart()
         {
-            startButton.SetActive(false);
-            timerText.gameObject.SetActive(true);
+            SetPlayingUI();
         }
 
         private void HandleGameOver()
         {
-            startButton.SetActive(true);
-            timerText.gameObject.SetActive(false);
+            SetGameOverUI();
         }
 
         private void UpdateScore(int score)
         {
-            scoreText.text = $"Score: {score}";
+            if (scoreText != null)
+                scoreText.text = score.ToString();
         }
 
         private void UpdateTimer(int seconds)
         {
-            timerText.text = seconds.ToString();
+            if (timerText != null)
+                timerText.text = seconds.ToString();
         }
 
         private void ShowIdleUI()
         {
+            headerScorePanel.SetActive(true);
+            contentScorePanel.SetActive(true);
+            headerTimerPanel.SetActive(false);
+            contentTimerPanel.SetActive(false);
             startButton.SetActive(true);
-            timerText.gameObject.SetActive(false);
+            
             UpdateScore(0);
+        }
+
+        private void SetPlayingUI()
+        {
+            headerScorePanel.SetActive(true);
+            contentScorePanel.SetActive(true);
+            headerTimerPanel.SetActive(true);
+            contentTimerPanel.SetActive(true);
+            startButton.SetActive(false);
+        }
+
+        private void SetGameOverUI()
+        {
+            headerScorePanel.SetActive(true);
+            contentScorePanel.SetActive(true);
+            headerTimerPanel.SetActive(false);
+            contentTimerPanel.SetActive(false);
+            startButton.SetActive(true);
         }
     }
 }
