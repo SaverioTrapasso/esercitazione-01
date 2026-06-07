@@ -99,32 +99,50 @@ namespace Project.Editor
             GameObject leftHand = GameObject.Find("LeftHandAnchor");
             GameObject rightHand = GameObject.Find("RightHandAnchor");
 
-            if (leftHand != null && gunPrefab != null) {
-                if (leftHand.GetComponentInChildren<Gun>() == null) {
-                    GameObject gunObj = Instantiate(gunPrefab, leftHand.transform);
-                    gunObj.name = "Gun_Left";
-                    gunObj.transform.localPosition = Vector3.zero;
-                    gunObj.transform.localRotation = Quaternion.identity;
-                    gunObj.transform.localScale = Vector3.one;
-                    if (gunObj.TryGetComponent<Gun>(out var gun))
-                    {
-                        SetPrivateField(gun, "controllerType", OVRInput.Controller.LTouch);
-                    }
-                }
+            // Instantiate one gun visual per hand (mesh disabled by default in prefab)
+            GameObject leftGun = null;
+            GameObject rightGun = null;
+
+            if (leftHand != null && gunPrefab != null && leftHand.transform.Find("Gun_Left") == null) {
+                leftGun = Instantiate(gunPrefab, leftHand.transform);
+                leftGun.name = "Gun_Left";
+                leftGun.transform.localPosition = Vector3.zero;
+                leftGun.transform.localRotation = Quaternion.identity;
+                leftGun.transform.localScale = Vector3.one;
             }
 
-            if (rightHand != null && gunPrefab != null) {
-                if (rightHand.GetComponentInChildren<Gun>() == null) {
-                    GameObject gunObj = Instantiate(gunPrefab, rightHand.transform);
-                    gunObj.name = "Gun_Right";
-                    gunObj.transform.localPosition = Vector3.zero;
-                    gunObj.transform.localRotation = Quaternion.identity;
-                    gunObj.transform.localScale = Vector3.one;
-                    if (gunObj.TryGetComponent<Gun>(out var gun))
-                    {
-                        SetPrivateField(gun, "controllerType", OVRInput.Controller.RTouch);
-                    }
-                }
+            if (rightHand != null && gunPrefab != null && rightHand.transform.Find("Gun_Right") == null) {
+                rightGun = Instantiate(gunPrefab, rightHand.transform);
+                rightGun.name = "Gun_Right";
+                rightGun.transform.localPosition = Vector3.zero;
+                rightGun.transform.localRotation = Quaternion.identity;
+                rightGun.transform.localScale = Vector3.one;
+            }
+
+            // Create a single GunController that manages both hands
+            GunController controller = FindFirstObjectByType<GunController>();
+            if (controller == null)
+            {
+                GameObject controllerObj = new GameObject("GunController");
+                controller = controllerObj.AddComponent<GunController>();
+                controllerObj.transform.SetParent(parent);
+            }
+
+            if (leftHand != null) SetPrivateField(controller, "leftHandAnchor", leftHand.transform);
+            if (rightHand != null) SetPrivateField(controller, "rightHandAnchor", rightHand.transform);
+
+            if (leftGun != null)
+            {
+                SetPrivateField(controller, "gunMeshLeft", leftGun.GetComponentInChildren<MeshRenderer>(true));
+                Transform muzzleLeft = leftGun.transform.Find("Muzzle");
+                if (muzzleLeft != null) SetPrivateField(controller, "muzzleLeft", muzzleLeft);
+            }
+
+            if (rightGun != null)
+            {
+                SetPrivateField(controller, "gunMeshRight", rightGun.GetComponentInChildren<MeshRenderer>(true));
+                Transform muzzleRight = rightGun.transform.Find("Muzzle");
+                if (muzzleRight != null) SetPrivateField(controller, "muzzleRight", muzzleRight);
             }
         }
 
