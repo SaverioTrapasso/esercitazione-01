@@ -15,6 +15,7 @@ namespace Project.Gameplay
         [SerializeField] private float maxDistance = 50f;
         [SerializeField] private LayerMask hitLayers;
         [SerializeField] private MeshRenderer gunMesh;
+        [SerializeField] private Transform muzzleTransform;
 
         [Header("Input Actions")]
         [SerializeField] private InputActionProperty grabAction;
@@ -55,7 +56,9 @@ namespace Project.Gameplay
 
         private void Fire()
         {
-            Ray ray = new Ray(transform.position, transform.forward);
+            Transform spawnPoint = muzzleTransform != null ? muzzleTransform : transform;
+            Ray ray = new Ray(spawnPoint.position, spawnPoint.forward);
+
             if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, hitLayers))
             {
                 // Check if we hit a Duck
@@ -78,7 +81,8 @@ namespace Project.Gameplay
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position, transform.forward * maxDistance);
+            Transform spawnPoint = muzzleTransform != null ? muzzleTransform : transform;
+            Gizmos.DrawRay(spawnPoint.position, spawnPoint.forward * maxDistance);
         }
     }
 }
