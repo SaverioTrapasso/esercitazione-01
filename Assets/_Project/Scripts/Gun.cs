@@ -16,39 +16,19 @@ namespace Project.Gameplay
         [SerializeField] private LayerMask hitLayers;
         [SerializeField] private MeshRenderer gunMesh;
         [SerializeField] private Transform muzzleTransform;
+        [SerializeField] private OVRInput.Controller controllerType = OVRInput.Controller.RTouch;
 
-        [Header("Input Actions")]
-        [SerializeField] private InputActionProperty grabAction;
-        [SerializeField] private InputActionProperty triggerAction;
-
-        private void OnEnable()
+        private void Update()
         {
-            grabAction.action.performed += OnGrabPerformed;
-            grabAction.action.canceled += OnGrabCanceled;
-            triggerAction.action.performed += OnTriggerPerformed;
-        }
+            // Visibility: enable mesh only if controller is connected
+            bool isControllerConnected = OVRInput.IsControllerConnected(controllerType);
+            if (gunMesh != null && gunMesh.enabled != isControllerConnected)
+            {
+                gunMesh.enabled = isControllerConnected;
+            }
 
-        private void OnDisable()
-        {
-            grabAction.action.performed -= OnGrabPerformed;
-            grabAction.action.canceled -= OnGrabCanceled;
-            triggerAction.action.performed -= OnTriggerPerformed;
-        }
-
-        private void OnGrabPerformed(InputAction.CallbackContext context)
-        {
-            if (gunMesh != null) gunMesh.enabled = true;
-        }
-
-        private void OnGrabCanceled(InputAction.CallbackContext context)
-        {
-            if (gunMesh != null) gunMesh.enabled = false;
-        }
-
-        private void OnTriggerPerformed(InputAction.CallbackContext context)
-        {
-            // Only fire if the gun is "grabbed" (mesh is enabled)
-            if (gunMesh != null && gunMesh.enabled)
+            // Input: check for trigger press
+            if (isControllerConnected && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controllerType))
             {
                 Fire();
             }
@@ -56,6 +36,8 @@ namespace Project.Gameplay
 
         private void Fire()
         {
+            if (GameManager.Instance == null) return;
+
             Transform spawnPoint = muzzleTransform != null ? muzzleTransform : transform;
             Ray ray = new Ray(spawnPoint.position, spawnPoint.forward);
 

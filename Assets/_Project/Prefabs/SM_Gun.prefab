@@ -52,30 +52,7 @@ MonoBehaviour:
     m_Bits: 1
   gunMesh: {fileID: 1711813855634381484}
   muzzleTransform: {fileID: 400004}
-  grabAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Grab
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 355db11c-2fc6-472b-802a-0384e9519f38
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -1421307730997125368, guid: cdb9899321f647908c62c9383e580a13, type: 3}
-  triggerAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Trigger
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 978e6083-6364-4e18-9628-30144862e080
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6495346087532386377, guid: cdb9899321f647908c62c9383e580a13, type: 3}
+  controllerType: 2
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

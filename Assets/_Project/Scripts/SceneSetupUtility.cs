@@ -86,15 +86,25 @@ namespace Project.Editor
 
             if (leftHand != null && gunPrefab != null) {
                 if (leftHand.GetComponentInChildren<Gun>() == null) {
-                    GameObject gun = Instantiate(gunPrefab, leftHand.transform);
-                    gun.name = "Gun_Left";
+                    GameObject gunObj = Instantiate(gunPrefab, leftHand.transform);
+                    gunObj.name = "Gun_Left";
+                    if (gunObj.TryGetComponent<Gun>(out var gun))
+                    {
+                        var field = typeof(Gun).GetField("controllerType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                        if (field != null) field.SetValue(gun, OVRInput.Controller.LTouch);
+                    }
                 }
             }
 
             if (rightHand != null && gunPrefab != null) {
                 if (rightHand.GetComponentInChildren<Gun>() == null) {
-                    GameObject gun = Instantiate(gunPrefab, rightHand.transform);
-                    gun.name = "Gun_Right";
+                    GameObject gunObj = Instantiate(gunPrefab, rightHand.transform);
+                    gunObj.name = "Gun_Right";
+                    if (gunObj.TryGetComponent<Gun>(out var gun))
+                    {
+                        var field = typeof(Gun).GetField("controllerType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                        if (field != null) field.SetValue(gun, OVRInput.Controller.RTouch);
+                    }
                 }
             }
         }
