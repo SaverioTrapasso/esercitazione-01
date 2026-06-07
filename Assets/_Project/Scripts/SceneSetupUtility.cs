@@ -103,6 +103,9 @@ namespace Project.Editor
                 if (leftHand.GetComponentInChildren<Gun>() == null) {
                     GameObject gunObj = Instantiate(gunPrefab, leftHand.transform);
                     gunObj.name = "Gun_Left";
+                    gunObj.transform.localPosition = Vector3.zero;
+                    gunObj.transform.localRotation = Quaternion.identity;
+                    gunObj.transform.localScale = Vector3.one;
                     if (gunObj.TryGetComponent<Gun>(out var gun))
                     {
                         SetPrivateField(gun, "controllerType", OVRInput.Controller.LTouch);
@@ -114,6 +117,9 @@ namespace Project.Editor
                 if (rightHand.GetComponentInChildren<Gun>() == null) {
                     GameObject gunObj = Instantiate(gunPrefab, rightHand.transform);
                     gunObj.name = "Gun_Right";
+                    gunObj.transform.localPosition = Vector3.zero;
+                    gunObj.transform.localRotation = Quaternion.identity;
+                    gunObj.transform.localScale = Vector3.one;
                     if (gunObj.TryGetComponent<Gun>(out var gun))
                     {
                         SetPrivateField(gun, "controllerType", OVRInput.Controller.RTouch);
