@@ -24,6 +24,11 @@ namespace Project.Editor
 
         [Header("UI References (Optional if setting up manually)")]
         public Canvas canvas;
+        public GameObject headerScorePanel;
+        public GameObject contentScorePanel;
+        public GameObject headerTimerPanel;
+        public GameObject contentTimerPanel;
+        public GameObject startButtonObj;
         public TMP_Text scoreText;
         public TMP_Text timerText;
         public Button startButton;
@@ -58,9 +63,7 @@ namespace Project.Editor
             }
             
             if (duckPrefab != null) {
-                // Assign via reflection or serialized field if possible
-                var prop = spawner.GetType().GetField("duckPrefab", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                if (prop != null) prop.SetValue(spawner, duckPrefab);
+                SetPrivateField(spawner, "duckPrefab", duckPrefab);
             }
 
             // 4. Setup UIManager
@@ -70,6 +73,18 @@ namespace Project.Editor
                 GameObject uiObj = new GameObject("UIManager");
                 ui = uiObj.AddComponent<UIManager>();
                 uiObj.transform.SetParent(interactiveFolder);
+            }
+
+            // Assign UI references if available
+            if (ui != null)
+            {
+                if (headerScorePanel != null) SetPrivateField(ui, "headerScorePanel", headerScorePanel);
+                if (contentScorePanel != null) SetPrivateField(ui, "contentScorePanel", contentScorePanel);
+                if (headerTimerPanel != null) SetPrivateField(ui, "headerTimerPanel", headerTimerPanel);
+                if (contentTimerPanel != null) SetPrivateField(ui, "contentTimerPanel", contentTimerPanel);
+                if (startButtonObj != null) SetPrivateField(ui, "startButton", startButtonObj);
+                if (scoreText != null) SetPrivateField(ui, "scoreText", scoreText);
+                if (timerText != null) SetPrivateField(ui, "timerText", timerText);
             }
 
             // 5. Setup Gun on Hands
@@ -90,8 +105,7 @@ namespace Project.Editor
                     gunObj.name = "Gun_Left";
                     if (gunObj.TryGetComponent<Gun>(out var gun))
                     {
-                        var field = typeof(Gun).GetField("controllerType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                        if (field != null) field.SetValue(gun, OVRInput.Controller.LTouch);
+                        SetPrivateField(gun, "controllerType", OVRInput.Controller.LTouch);
                     }
                 }
             }
@@ -102,11 +116,16 @@ namespace Project.Editor
                     gunObj.name = "Gun_Right";
                     if (gunObj.TryGetComponent<Gun>(out var gun))
                     {
-                        var field = typeof(Gun).GetField("controllerType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                        if (field != null) field.SetValue(gun, OVRInput.Controller.RTouch);
+                        SetPrivateField(gun, "controllerType", OVRInput.Controller.RTouch);
                     }
                 }
             }
+        }
+
+        private void SetPrivateField(object obj, string fieldName, object value)
+        {
+            var field = obj.GetType().GetField(fieldName, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (field != null) field.SetValue(obj, value);
         }
 
         private Transform GetOrCreateFolder(string name)
