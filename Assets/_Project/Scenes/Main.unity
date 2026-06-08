@@ -685,37 +685,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1666551213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &644380227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 644380228}
-  m_Layer: 0
-  m_Name: Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &644380228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644380227}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.28194144, y: 0.055704307, z: 0.8692858, w: 0.40217933}
-  m_LocalPosition: {x: 2.604, y: 0.2, z: 9.42}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1949902822}
-  m_LocalEulerAnglesHint: {x: 7.466, y: 32.653, z: 132.534}
 --- !u!1001 &686008186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1746,37 +1715,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971857032}
   m_CullTransparentMesh: 1
---- !u!1 &995306507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 995306508}
-  m_Layer: 0
-  m_Name: Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &995306508
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995306507}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.10266231, y: -0.03515712, z: 0.88482493, w: 0.4531108}
-  m_LocalPosition: {x: 2.96, y: 0.61, z: 9.175}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1949902822}
-  m_LocalEulerAnglesHint: {x: 8.931, y: 8.723, z: 126.449}
 --- !u!1 &1052955068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,13 +2607,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288563667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09988127, y: -0.042418227, z: 0.9149994, w: 0.38858783}
+  m_LocalRotation: {x: 0.31998736, y: 0.41399154, z: 0.15819974, w: -0.83737206}
   m_LocalPosition: {x: 2.429, y: 0.106, z: 9.175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1949902822}
-  m_LocalEulerAnglesHint: {x: 8.931, y: 8.723, z: 134.662}
+  m_LocalEulerAnglesHint: {x: -41.827, y: 307.385, z: 0}
 --- !u!1 &1363588363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,7 +2658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61a280b498e46b89a29711638fa64f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Project.Editor.SceneSetupUtility
-  duckPrefab: {fileID: 5730998769996130320, guid: 8df42c448c26d8e43be6dacb6db61b18, type: 3}
+  duckPrefab: {fileID: 7000000000000000001, guid: 8df42c448c26d8e43be6dacb6db61b18, type: 3}
   gunPrefab: {fileID: 100000, guid: 69f23baa5b95e8e498d2d3e9fc0c9907, type: 3}
   canvas: {fileID: 1225911335}
   headerScorePanel: {fileID: 26811712}
@@ -2903,39 +2841,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 26.011864, y: 0.50105834, z: 26.349394}
-  m_Center: {x: -0.41905403, y: -0.8917433, z: -0.0408144}
---- !u!1 &1579137721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1579137722}
-  m_Layer: 0
-  m_Name: Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1579137722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579137721}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.28194144, y: 0.055704307, z: 0.8692858, w: 0.40217933}
-  m_LocalPosition: {x: 3.299, y: 0.512, z: 9.459}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1949902822}
-  m_LocalEulerAnglesHint: {x: 7.466, y: 32.653, z: 132.534}
+  m_Size: {x: 6.4963875, y: 0.50105834, z: 5.8588743}
+  m_Center: {x: -0.7387353, y: -0.8917433, z: -0.44377327}
 --- !u!1 &1609607154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,37 +3352,6 @@ Transform:
   - {fileID: 340333134}
   m_Father: {fileID: 1666551213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1851564391
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1851564392}
-  m_Layer: 0
-  m_Name: Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1851564392
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851564391}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.12800276, y: -0.010277365, z: 0.88061905, w: 0.45609185}
-  m_LocalPosition: {x: 3.411, y: 0.473, z: 9.22}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1949902822}
-  m_LocalEulerAnglesHint: {x: 7.751, y: 12.595, z: 126.095}
 --- !u!1 &1862482502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,13 +3533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4839a2dfcdc40df8945dc9d3e2d6418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Project.Gameplay.DuckSpawner
-  duckPrefab: {fileID: 5730998769996130320, guid: 8df42c448c26d8e43be6dacb6db61b18, type: 3}
+  duckPrefab: {fileID: 7000000000000000001, guid: 8df42c448c26d8e43be6dacb6db61b18, type: 3}
   spawnPoints:
   - {fileID: 1288563668}
-  - {fileID: 1851564392}
-  - {fileID: 644380228}
-  - {fileID: 1579137722}
-  - {fileID: 995306508}
   spawnInterval: 2
 --- !u!1 &1904159143
 GameObject:
@@ -3748,7 +3620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1904159146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1442790010}
+        m_TargetAssemblyTypeName: Project.Core.GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1904159146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3917,10 +3801,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1288563668}
-  - {fileID: 1851564392}
-  - {fileID: 644380228}
-  - {fileID: 1579137722}
-  - {fileID: 995306508}
   - {fileID: 1363588364}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -38,11 +38,13 @@ Guardando il progetto puoi esplorare:
 
 Leggi [ONBOARDING.md](ONBOARDING.md) e consulta le [RULES.md](RULES.md).
 
+Per il contesto del minigioco e il briefing di sviluppo, vedi [Minigame.md](Minigame.md).
+
 ---
 
 ## Licenza
 
-GPL-3.0 — libero di usare, modificare e distribuire con le stesse condizioni.
+[GPL-3.0](LICENSE) — libero di usare, modificare e distribuire con le stesse condizioni.
 
 ---
 

@@ -87,10 +87,16 @@ namespace Project.Gameplay
                 // Temporary debug log to confirm what the raycast hits in Play Mode.
                 Debug.Log($"Raycast hit: {hit.collider.gameObject.name} tag: {hit.collider.tag}");
 
-                // Hit a Duck -> add score.
+                // Hit a Duck -> let the duck handle scoring and destroy itself
+                // so it disappears instantly instead of keeping flying.
                 if (hit.collider.CompareTag("Duck"))
                 {
-                    if (GameManager.Instance != null)
+                    var duck = hit.collider.GetComponentInParent<DuckBehaviour>();
+                    if (duck != null)
+                    {
+                        duck.OnHit();
+                    }
+                    else if (GameManager.Instance != null)
                     {
                         GameManager.Instance.AddScore(10);
                     }

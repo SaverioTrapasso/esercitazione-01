@@ -37,6 +37,7 @@ Tutte le scene Unity di questo progetto seguono la stessa struttura, organizzata
 ## STATIC       tutto ciò che non cambia a runtime
 ## DYNAMIC      tutto ciò che si muove senza input utente
 ## INTERACTIVE  tutto ciò che risponde all'utente
+## UI           tutto ciò che mostra informazioni all'utente
 ## GAME LOGIC   oggetti che conoscono le regole del gioco
 ## SYSTEM       infrastruttura tecnica, indipendente dal gioco
 ```

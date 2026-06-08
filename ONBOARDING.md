@@ -1,7 +1,5 @@
 # Esercitazione-01 — Onboarding
 
-[Torna al README](README.md) | [Vai alle REGOLE](RULES.md)
-
 Questo è un progetto Unity XR pubblico che uso per insegnare sviluppo immersivo su Meta Quest. Se sei uno studente del corso, benvenuto. Se sei arrivato qui per conto tuo, benvenuto lo stesso — ho lasciato tutto leggibile di proposito.
 
 Quello che trovi qui è il mio metodo, non il metodo. Prendilo come punto di partenza, adattalo, miglioralo.
@@ -72,18 +70,22 @@ La hierarchy è organizzata per **ciclo di vita a runtime** — non per area di 
                 → animazioni ambientali, oggetti procedurali, spawn automatici
 
 ## INTERACTIVE  tutto ciò che risponde all'utente
-                → Gun, Duck, trigger volumes, UI interattiva
+                → Camera Rig, Gun (Left/Right), GunController
                 → regola: se ha almeno un'interazione con l'utente, va qui
 
+## UI           tutto ciò che mostra informazioni all'utente
+                → Canvas world space, UIManager
+                → separato da INTERACTIVE perché non è nel mondo 3D
+
 ## GAME LOGIC   oggetti che conoscono le regole di questo gioco
-                → GameManager, ScoreManager, DuckSpawner, timer
+                → GameManager, DuckSpawner, Spawn Points
                 → sa cosa è un Duck, sa cosa significa "hai vinto"
 
 ## SYSTEM       infrastruttura tecnica invisibile, indipendente dal gioco
-                → NavMesh Surface, AudioManager, configurazioni XR
+                → NavMesh Surface, FloorCollider, EventSystem
 ```
 
-Se aggiungi un oggetto e non sai dove metterlo, chiediti: *risponde all'utente?* → INTERACTIVE. *Conosce le regole del gioco?* → GAME LOGIC. *Si muove da solo?* → DYNAMIC. *Sta fermo?* → STATIC. *Tiene in piedi la scena ma non sa niente del gioco?* → SYSTEM.
+Se aggiungi un oggetto e non sai dove metterlo, chiediti: *risponde all'utente?* → INTERACTIVE. *Mostra informazioni?* → UI. *Conosce le regole del gioco?* → GAME LOGIC. *Si muove da solo?* → DYNAMIC. *Sta fermo?* → STATIC. *Tiene in piedi la scena ma non sa niente del gioco?* → SYSTEM.
 
 ---
 
@@ -93,14 +95,11 @@ Il progetto è costruito interamente a prefab. La scena è un contenitore — la
 
 | Prefab | Categoria | Cosa fa |
 |---|---|---|
-| `Gun` | INTERACTIVE | Modello 3D agganciato alla mano, XR Grab Interactable, spara Bullet al trigger |
-| `Bullet` | INTERACTIVE | Proiettile fisico, Rigidbody, si distrugge e notifica score al contatto |
-| `Duck` | INTERACTIVE | Bersaglio volante, ShaderGraph toon material, DuckBehaviour script |
-| `DuckSpawner` | GAME LOGIC | Spawna Duck su un path con timer configurabile |
+| `Gun_Left` / `Gun_Right` | INTERACTIVE | Modello 3D figlio delle ancore mano, appare al grab, spara raycast al trigger |
+| `Duck` | INTERACTIVE | Bersaglio volante, ShaderGraph toon material, blendshape ali, DuckBehaviour script |
+| `DuckSpawner` | GAME LOGIC | Spawna Duck a intervalli configurabili |
 | `GameManager` | GAME LOGIC | State machine: Idle → Playing → GameOver |
-| `UI_HUD` | INTERACTIVE | Canvas world space, mostra timer e score durante il gioco |
-| `UI_StartScreen` | INTERACTIVE | Canvas world space, schermata iniziale con Start |
-| `UI_ScoreScreen` | INTERACTIVE | Canvas world space, mostra il punteggio finale |
+| `Canvas` | UI | Score, timer, Start button — world space |
 
 ---
 
